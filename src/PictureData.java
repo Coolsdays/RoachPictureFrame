@@ -36,5 +36,4 @@ public class PictureData {
 	public String toString() {
 		return String.format("%s\n%s\n%s",pic,date,desc);
 	}
-	
 }
