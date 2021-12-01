@@ -1,10 +1,15 @@
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseMotionListener;
@@ -12,6 +17,7 @@ import java.awt.event.MouseEvent;
 
 
 public class MenuAndMouseFrame extends JFrame {
+	
 	public void setupMainMenu() {
 		JMenuBar mbar = new JMenuBar();
 		JMenu mnuFile = new JMenu("File");
@@ -35,10 +41,23 @@ public class MenuAndMouseFrame extends JFrame {
 	}
 	public void setupGUI() {
 		setTitle("Menu and Mouse Frame");
-		setBounds(100,100,500,400);
+		setBounds(100,100,290,400);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.setLayout(new BorderLayout());
+		JPanel panSouth = new JPanel();
+		panSouth.setLayout(new FlowLayout());
+		JLabel labSize = new JLabel("Size");
+		JTextField txtSize = new JTextField(2);
+		JButton btnChange = new JButton("Change");
+		panSouth.add(labSize);
+		panSouth.add(txtSize);
+		panSouth.add(btnChange);
 		setupMainMenu();
-		
+		c.add(panSouth,BorderLayout.SOUTH);
+	}
+	public MenuAndMouseFrame() {
+		setupGUI();
 	}
 	
 }
