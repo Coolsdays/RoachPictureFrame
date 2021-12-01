@@ -1,4 +1,5 @@
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -15,6 +16,12 @@ public class PicturePanel extends JPanel implements MouseListener, MouseMotionLi
 	        msgX = 10;
 	        msgY = 20;
 }
+	  @Override
+	    public void paintComponent(Graphics g) {
+	        super.paintComponent(g);
+	        g.drawString(message,msgX,msgY); 
+	        } 
+	    
 	  public void mouseClicked(MouseEvent e) {
 	        message = String.format("Mouse clicked at (%d, %d)",e.getX(),e.getY());
 	        msgX = e.getX();
