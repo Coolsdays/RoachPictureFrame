@@ -5,16 +5,17 @@ import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
 public class PictureLoader {
-	public ArrayList<Pictures> loadImagesFromPictureData(ArrayList<PictureData> data) {
-		ArrayList<Pictures> pics = ArrayList<Pictures>();
+	public static ArrayList<BufferedImage> loadImagesFromPictureData(ArrayList<PictureData> data) {
+		ArrayList<BufferedImage> pics = new ArrayList<BufferedImage>();
 		for (PictureData pic: data) {
+			System.out.println(pic.getPic());
 			try {
-				String picFname = data.get(0);
-				BufferedImage img = ImageIO.read(new File(picFname));
+				BufferedImage img = ImageIO.read(new File(pic.getPic()));
 				pics.add(img);
 			} catch (Exception ex) {
 				JOptionPane.showMessageDialog(null, "Failed to load images.");
 			}
 		}
+		return pics;
 	}
 }
