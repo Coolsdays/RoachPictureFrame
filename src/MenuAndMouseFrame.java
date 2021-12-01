@@ -17,7 +17,6 @@ import java.awt.event.MouseEvent;
 
 
 public class MenuAndMouseFrame extends JFrame {
-	
 	public void setupMainMenu() {
 		JMenuBar mbar = new JMenuBar();
 		JMenu mnuFile = new JMenu("File");
@@ -29,30 +28,37 @@ public class MenuAndMouseFrame extends JFrame {
 		JMenuItem miSave = new JMenuItem("Save");
 		mnuFile.add(miSave);
 		JMenuItem miExit = new JMenuItem("Exit");
+		miExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+				}
+			}
+		);
 		mnuFile.add(miExit);
 		JMenuItem miAbout = new JMenuItem("About");
-		miAbout.addActionListener(
-				new ActionListener() {
+		miAbout.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						JOptionPane.showMessageDialog(null, "Hello");
 					}
-				});
+				}
+			);
 		mnuFile.add(miAbout);
 	}
 	public void setupGUI() {
 		setTitle("Menu and Mouse Frame");
 		setBounds(100,100,290,400);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setupMainMenu();
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		JPanel panSouth = new JPanel();
 		panSouth.setLayout(new FlowLayout());
-		JLabel labSize = new JLabel("Size");
-		JTextField txtSize = new JTextField(2);
-		JButton btnChange = new JButton("Change");
-		panSouth.add(labSize);
-		panSouth.add(txtSize);
-		panSouth.add(btnChange);
+		JButton btnSave = new JButton("Save");
+		JButton btnNext = new JButton("Next");
+		JButton btnPrev = new JButton("Prev");
+		panSouth.add(btnPrev);
+		panSouth.add(btnSave);
+		panSouth.add(btnNext);
 		setupMainMenu();
 		c.add(panSouth,BorderLayout.SOUTH);
 	}
