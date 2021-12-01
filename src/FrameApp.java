@@ -1,7 +1,10 @@
+import java.util.ArrayList;
 
 public class FrameApp {
 	public static void main(String[] args) throws Exception {
-		MenuAndMouseFrame mmf = new MenuAndMouseFrame();
-		mmf.setVisible(true);
+		ArrayList<PictureData> data = PictureDataReader.readData("descriptions.txt");
+		//System.out.print(data);
+		PictureFrame pf = new PictureFrame();
+		pf.setVisible(true);
 	}
 }
