@@ -6,5 +6,6 @@ public class FrameApp {
 		//System.out.print(data);
 		PictureFrame pf = new PictureFrame();
 		pf.setVisible(true);
+		
 	}
 }
