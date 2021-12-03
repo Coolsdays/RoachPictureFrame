@@ -8,7 +8,7 @@ public class PictureLoader {
 	public static ArrayList<BufferedImage> loadImagesFromPictureData(ArrayList<PictureData> data) {
 		ArrayList<BufferedImage> pics = new ArrayList<BufferedImage>();
 		for (PictureData pic: data) {
-			System.out.println(pic.getPic());
+			//System.out.println(pic.getPic());
 			try {
 				BufferedImage img = ImageIO.read(new File(pic.getPic()));
 				pics.add(img);

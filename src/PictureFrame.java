@@ -10,9 +10,9 @@ import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import java.awt.event.MouseEvent;
+import java.awt.Graphics;
 	
 public class PictureFrame extends JFrame {
 	private PicturePanel panCenter;
@@ -23,6 +23,12 @@ public class PictureFrame extends JFrame {
 			mbar.add(mnuFile);
 			mbar.add(mnuHelp);
 			JMenuItem miSave = new JMenuItem("Save");
+			miSave.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					}
+				}
+			);
 			mnuFile.add(miSave);
 			JMenuItem miExit = new JMenuItem("Exit");
 			miExit.addActionListener(new ActionListener() {
@@ -43,17 +49,38 @@ public class PictureFrame extends JFrame {
 			setJMenuBar(mbar);
 		}
 		public void setupGUI() {
+			int i = 0; 
 			setTitle("Picture Frame");
 			setBounds(100,100,290,400);
 			setDefaultCloseOperation(EXIT_ON_CLOSE);
+			ArrayList<PictureData> data = PictureDataReader.readData("descriptions.txt");
+			ArrayList<BufferedImage> pics = PictureLoader.loadImagesFromPictureData(data);
 			setupMainMenu();
 			Container c = getContentPane();
 			c.setLayout(new BorderLayout());
 			JPanel panSouth = new JPanel();
 			panSouth.setLayout(new FlowLayout());
 			JButton btnSave = new JButton("Save");
+			btnSave.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					}
+				}
+			);
 			JButton btnNext = new JButton("Next");
+			btnNext.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			}
+		);
 			JButton btnPrev = new JButton("Prev");
+			btnPrev.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					}
+				}
+			);
 			panSouth.add(btnPrev);
 			panSouth.add(btnSave);
 			panSouth.add(btnNext);
