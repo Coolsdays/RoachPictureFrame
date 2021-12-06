@@ -8,7 +8,7 @@ public class PictureDataReader {
 		pic = new PictureData(A,B,C);
 		return pic;
 	}
-	public static ArrayList<PictureData> readData(String fName) {
+	public static ArrayList<PictureData> readPictureDataFromFile(String fName) {
 		/*
 		 * Reads line for line through the text file and builds question by question putting the choices and answers inside.
 		 */

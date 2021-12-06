@@ -69,7 +69,7 @@ public class PictureFrame extends JFrame {
 			setTitle("Picture Frame");
 			setBounds(100,100,290,400);
 			setDefaultCloseOperation(EXIT_ON_CLOSE);
-			ArrayList<PictureData> data = PictureDataReader.readData("descriptions.txt");
+			ArrayList<PictureData> data = PictureDataReader.readPictureDataFromFile("descriptions.txt");
 			ArrayList<BufferedImage> pics = PictureLoader.loadImagesFromPictureData(data);
 			setupMainMenu(data);
 			Container c = getContentPane();

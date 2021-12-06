@@ -24,8 +24,6 @@ public class PicturePanel extends JPanel implements MouseListener, MouseMotionLi
 	     addMouseMotionListener(this);
 	     msgX = 10;
 	     msgY = 20;
-	     data = PictureDataReader.readData("descriptions.txt");
-	     pics = PictureLoader.loadImagesFromPictureData(data);
 }
 	public BufferedImage getPicture() {
 		return picture;

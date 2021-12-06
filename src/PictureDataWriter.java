@@ -9,14 +9,7 @@ public class PictureDataWriter {
 			PrintWriter encode = new PrintWriter(new BufferedWriter(new FileWriter("descriptions.txt")));
 			int i = 0;
 			for (PictureData pic : pics) {
-			if (i < 2) {
-					encode.print(pic + "\t");
-					i++;
-				
-			} else if (i == 2){
-				encode.print("\n");
-				i = 0;
-			}
+				encode.print(pic);
 		}
 			encode.close();
 		} catch (Exception ex) {
