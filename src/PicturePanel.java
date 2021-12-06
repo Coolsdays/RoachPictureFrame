@@ -19,7 +19,7 @@ public class PicturePanel extends JPanel implements MouseListener, MouseMotionLi
 	
 	public PicturePanel() {
 		//Initializing a drawing panel. + underneath are the getters and setters for the image. 
-		 message = "";
+		 message = "(x=0, y=0)";
 	     setPreferredSize(new Dimension(200,200));
 	     addMouseListener(this);
 	     addMouseMotionListener(this);
