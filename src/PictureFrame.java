@@ -23,7 +23,10 @@ public class PictureFrame extends JFrame {
 	private JTextField Date;
 	private JTextArea Desc;
 	private int i = 0;
-		public void setupMainMenu() {
+	private String DateToReplace;
+	private String DescToReplace;
+	
+		public void setupMainMenu(ArrayList<PictureData> data) {
 			JMenuBar mbar = new JMenuBar();
 			JMenu mnuFile = new JMenu("File");
 			JMenu mnuHelp = new JMenu("Help");
@@ -32,7 +35,14 @@ public class PictureFrame extends JFrame {
 			JMenuItem miSave = new JMenuItem("Save");
 			miSave.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					
+					Date.setText(Date.getText());
+					Desc.setText(Desc.getText());
+					try {
+						PictureDataWriter.SaveToFile(data);
+						JOptionPane.showMessageDialog(null, "File successfully saved");
+					} catch (Exception ex) {
+						JOptionPane.showMessageDialog(null, "Failed to save the file");
+					}
 					}
 				}
 			);
@@ -61,20 +71,27 @@ public class PictureFrame extends JFrame {
 			setDefaultCloseOperation(EXIT_ON_CLOSE);
 			ArrayList<PictureData> data = PictureDataReader.readData("descriptions.txt");
 			ArrayList<BufferedImage> pics = PictureLoader.loadImagesFromPictureData(data);
-			setupMainMenu();
+			setupMainMenu(data);
 			Container c = getContentPane();
 			c.setLayout(new BorderLayout());
 			JPanel panSouth = new JPanel();
 			JPanel panCent = new JPanel();
 			panCent.setLayout(new BorderLayout());
 			panSouth.setLayout(new FlowLayout());
-			Date = new JTextField();
+			Date = new JTextField(10);
 			Desc = new JTextArea();
 			
 			JButton btnSave = new JButton("Save");
 			btnSave.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					
+					Date.setText(Date.getText());
+					Desc.setText(Desc.getText());
+					try {
+						PictureDataWriter.SaveToFile(data);
+						JOptionPane.showMessageDialog(null, "File successfully saved");
+					} catch (Exception ex) {
+						JOptionPane.showMessageDialog(null, "Failed to save the file");
+					}
 					}
 				}
 			);
