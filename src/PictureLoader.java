@@ -9,6 +9,10 @@ public class PictureLoader {
 		ArrayList<BufferedImage> pics = new ArrayList<BufferedImage>();
 		for (PictureData pic: data) {
 			//System.out.println(pic.getPic());
+			/*
+			 * Loading in the images for the project. Does this by taking the first part of the descriptions.txt file
+			 * and using those names to look for the picture that corresponds.
+			 */
 			try {
 				BufferedImage img = ImageIO.read(new File(pic.getPic()));
 				pics.add(img);

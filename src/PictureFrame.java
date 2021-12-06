@@ -16,6 +16,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 	
 public class PictureFrame extends JFrame {
+	//Declaring many variables and other helpful pieces to this puzzle. 
 	private PicturePanel panCenter;
 	private PicturePanel panNorth;
 	private BufferedImage picture;
@@ -27,6 +28,10 @@ public class PictureFrame extends JFrame {
 	private String DescToReplace;
 	
 		public void setupMainMenu(ArrayList<PictureData> data) {
+		/*
+		 * Setting up the menu bar on the top of the window.
+		 * Has the File and Help portions of the top, along with what each button inside does.
+		 */
 			JMenuBar mbar = new JMenuBar();
 			JMenu mnuFile = new JMenu("File");
 			JMenu mnuHelp = new JMenu("Help");
@@ -66,6 +71,10 @@ public class PictureFrame extends JFrame {
 			setJMenuBar(mbar);
 		}
 		public void setupGUI() {
+			/*
+			 * Setting up the GUI itself. Setting the size of the window and putting all the important information
+			 * inside the container so everything can be seen. 
+			 */
 			setTitle("Picture Frame");
 			setBounds(100,100,290,400);
 			setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -81,6 +90,7 @@ public class PictureFrame extends JFrame {
 			Date = new JTextField(10);
 			Desc = new JTextArea();
 			
+			//Making the buttons on the bottom of the screen function. 
 			JButton btnSave = new JButton("Save");
 			btnSave.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -130,6 +140,8 @@ public class PictureFrame extends JFrame {
 			panSouth.add(btnNext);
 			c.add(panSouth,BorderLayout.SOUTH);
 			
+			//Laying out the picture and date and description inside of the 
+			//container so it all fits and looks considerably nicer. 
 			panCenter = new PicturePanel();
 			c.add(panCenter,BorderLayout.NORTH);
 			panNorth = new PicturePanel();
@@ -145,6 +157,7 @@ public class PictureFrame extends JFrame {
 			
 		}
 		public PictureFrame() {
+			//running the whole program. 
 			setupGUI();
 		}
 		

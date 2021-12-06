@@ -10,7 +10,8 @@ public class PictureDataReader {
 	}
 	public static ArrayList<PictureData> readPictureDataFromFile(String fName) {
 		/*
-		 * Reads line for line through the text file and builds question by question putting the choices and answers inside.
+		 * Reads line for line through the text file and builds picture by picture putting the Date, Description, and pic address inside.
+		 * If it fails, it simply returns null.
 		 */
 		Scanner fsc;
 		ArrayList<PictureData> pics = new ArrayList<PictureData>();

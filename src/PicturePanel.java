@@ -5,11 +5,11 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class PicturePanel extends JPanel implements MouseListener, MouseMotionListener {
+	//Declaring many more variables and ArrayLists.
 	private String message;
 	private int msgX, msgY;
 	private ArrayList<BufferedImage> pics;
@@ -18,6 +18,7 @@ public class PicturePanel extends JPanel implements MouseListener, MouseMotionLi
 	private PictureData pic;
 	
 	public PicturePanel() {
+		//Initializing a drawing panel. + underneath are the getters and setters for the image. 
 		 message = "";
 	     setPreferredSize(new Dimension(200,200));
 	     addMouseListener(this);
@@ -44,7 +45,9 @@ public class PicturePanel extends JPanel implements MouseListener, MouseMotionLi
 	    }
 	    g.drawString(message,msgX,msgY); 
 	} 
-	    
+	
+	//And last but not least, here are the mouse events all laid out to allow for the 
+	//tracking of the mouse around the screen. 
 	public void mouseClicked(MouseEvent e) {
 	    message = String.format("(x=%d, y=%d)",e.getX(),e.getY());
 	    msgX = e.getX();

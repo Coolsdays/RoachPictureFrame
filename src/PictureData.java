@@ -1,5 +1,9 @@
 
 public class PictureData {
+	/*
+	 * The Getters and Setters for the PictureData portion. Defines the object which runs the program. 
+	 * Also has the toString function as well.  
+	 */
 	private String pic;
 	private String date;
 	private String desc;
