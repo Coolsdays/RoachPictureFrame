@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import java.awt.Graphics;
 	
 public class PictureFrame extends JFrame {
 	private PicturePanel panCenter;
@@ -67,8 +66,11 @@ public class PictureFrame extends JFrame {
 			c.setLayout(new BorderLayout());
 			JPanel panSouth = new JPanel();
 			JPanel panCent = new JPanel();
-			panCent.setLayout(new FlowLayout());
+			panCent.setLayout(new BorderLayout());
 			panSouth.setLayout(new FlowLayout());
+			Date = new JTextField();
+			Desc = new JTextArea();
+			
 			JButton btnSave = new JButton("Save");
 			btnSave.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -85,6 +87,8 @@ public class PictureFrame extends JFrame {
 						i = 0;
 					}
 						picture = pics.get(i);
+						Date.setText(data.get(i).getDate());
+						Desc.setText(data.get(i).getDesc());
 						panNorth.setPicture(picture);
 				}
 			}
@@ -98,9 +102,8 @@ public class PictureFrame extends JFrame {
 						i = 3;
 					}
 						picture = pics.get(i);
-						Data = data.get(i);
-						panCent.setDescription(Data);
-						panCent.setDate(Data);
+						Date.setText(data.get(i).getDate());
+						Desc.setText(data.get(i).getDesc());
 						panNorth.setPicture(picture);
 					}
 				}
@@ -109,12 +112,19 @@ public class PictureFrame extends JFrame {
 			panSouth.add(btnSave);
 			panSouth.add(btnNext);
 			c.add(panSouth,BorderLayout.SOUTH);
+			
 			panCenter = new PicturePanel();
-			c.add(panCenter,BorderLayout.CENTER);
+			c.add(panCenter,BorderLayout.NORTH);
 			panNorth = new PicturePanel();
-			c.add(panNorth,BorderLayout.CENTER);
+			panNorth.setLayout(new BorderLayout());
+			c.add(panNorth,BorderLayout.NORTH);
+			c.add(panCent,BorderLayout.CENTER);
 			picture = pics.get(i);
 			panNorth.setPicture(picture);
+			Date.setText(data.get(i).getDate());
+			Desc.setText(data.get(i).getDesc());
+			panCent.add(Date,BorderLayout.NORTH);
+			panCent.add(Desc,BorderLayout.CENTER);
 			
 		}
 		public PictureFrame() {
