@@ -1,5 +1,3 @@
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class FrameApp {
 	public static void main(String[] args) throws Exception {

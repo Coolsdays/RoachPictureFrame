@@ -8,7 +8,7 @@ public class PictureDataWriter {
 		try {
 			PrintWriter encode = new PrintWriter(new BufferedWriter(new FileWriter("descriptions.txt")));
 			for (PictureData pic : pics) {
-				encode.print(pic);
+				encode.println(pic);
 		}
 			encode.close();
 		} catch (Exception ex) {

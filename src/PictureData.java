@@ -38,7 +38,7 @@ public class PictureData {
 	}
 	@Override
 	public String toString() {
-		return String.format("%s\n%s\n%s",pic,date,desc);
+		return String.format("%s\t%s\t%s",pic,date,desc);
 	}
 	
 }
