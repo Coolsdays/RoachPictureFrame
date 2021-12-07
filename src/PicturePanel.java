@@ -12,10 +12,7 @@ public class PicturePanel extends JPanel implements MouseListener, MouseMotionLi
 	//Declaring many more variables and ArrayLists.
 	private String message;
 	private int msgX, msgY;
-	private ArrayList<BufferedImage> pics;
 	private BufferedImage picture;
-	private ArrayList<PictureData> data;
-	private PictureData pic;
 	
 	public PicturePanel() {
 		//Initializing a drawing panel. + underneath are the getters and setters for the image. 
