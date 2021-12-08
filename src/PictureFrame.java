@@ -20,12 +20,9 @@ public class PictureFrame extends JFrame {
 	private PicturePanel panCenter;
 	private PicturePanel panNorth;
 	private BufferedImage picture;
-	private PictureData Data;
 	private JTextField Date;
 	private JTextArea Desc;
 	private int i = 0;
-	private String DateToReplace;
-	private String DescToReplace;
 	
 		public void setupMainMenu(ArrayList<PictureData> data) {
 		/*
@@ -42,6 +39,7 @@ public class PictureFrame extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					Date.setText(Date.getText());
 					Desc.setText(Desc.getText());
+
 					try {
 						PictureDataWriter.SaveToFile(data);
 						JOptionPane.showMessageDialog(null, "File successfully saved");
