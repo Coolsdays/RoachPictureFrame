@@ -37,8 +37,8 @@ public class PictureFrame extends JFrame {
 			JMenuItem miSave = new JMenuItem("Save");
 			miSave.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					Date.setText(Date.getText());
-					Desc.setText(Desc.getText());
+					data.get(i).setDate(Date.getText());
+					data.get(i).setDesc(Desc.getText());
 
 					try {
 						PictureDataWriter.SaveToFile(data);
@@ -92,8 +92,8 @@ public class PictureFrame extends JFrame {
 			JButton btnSave = new JButton("Save");
 			btnSave.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					Date.setText(Date.getText());
-					Desc.setText(Desc.getText());
+					data.get(i).setDate(Date.getText());
+					data.get(i).setDesc(Desc.getText());
 					try {
 						PictureDataWriter.SaveToFile(data);
 						JOptionPane.showMessageDialog(null, "File successfully saved");
